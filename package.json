@@ -1,5 +1,5 @@
 {
-  "name": "SassCC",
+  "name": "sasscc",
   "version": "1.0.0",
   "description": "A color tool for generating more saturated color options on the fly",
   "main": "index.js",
