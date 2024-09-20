@@ -1,0 +1,55 @@
+$base-color: #2867cc;
+
+$colorScale: 3;
+
+$colors: (
+    'a': (
+      value: #a81b6c,
+      name: 'purple',
+      scale: $colorScale
+    ),
+    'b': (
+      value: #1c95ba,
+      name: 'teal',
+      scale: $colorScale
+    ),
+    'c': (
+      value: #2b2d33,
+      name: 'dark grey',
+      scale: $colorScale
+    ),
+    'd': (
+      value: #261b04,
+      name: 'yellow',
+      scale: $colorScale
+    ),
+    'e': (
+      value: #d62121,
+      name: 'dark orange',
+      scale: $colorScale
+    ),
+    'f': (
+      value: #29b729,
+      name: 'green',
+      scale: $colorScale
+    ),
+    'g': (
+      value: #e81c0d,
+      name: 'grad',
+      scale: $colorScale,
+      -7: #e01599, 
+      -6: #e11484, 
+      -5: #e2136f, 
+      -4: #e3125a, 
+      -3: #e51044, 
+      -2: #e60f2d, 
+      -1: #e70e16, 
+      1: #e9310c,
+      2: #ea470b,
+      3: #eb5e0a,
+      4: #ed7508,
+      5: #ee8d07,
+      6: #efa506,
+      7: #f0bd05,
+    )
+  );
