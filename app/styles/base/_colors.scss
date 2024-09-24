@@ -4,13 +4,13 @@ $colorScale: 3;
 
 $colors: (
     'a': (
-      value: #a81b6c,
+      value: #000,
       name: 'purple',
       scale: $colorScale
     ),
     'b': (
       value: #1c95ba,
-      name: 'teal',
+      name: 'blue',
       scale: $colorScale
     ),
     'c': (
@@ -25,7 +25,7 @@ $colors: (
     ),
     'e': (
       value: #d62121,
-      name: 'dark orange',
+      name: 'red',
       scale: $colorScale
     ),
     'f': (
