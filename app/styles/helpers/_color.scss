@@ -2,14 +2,14 @@
 @use 'sass:math';
 @import 'functions';
 
-@function color($color, $scale: 0, $linear: false, $colorScale: 3) {
+@function color($color, $scale: 0, $linear: true, $colorScale: 3) {
 
   // get the base color through map
   $baseColor: if(map-has-key($colors, $color, value), 
                   map-get($colors, $color, value), 
                   $color);
                   
-  @if ($linear == false) {
+  @if ($linear == true) {
                     
     // get scale through map
     $colorScale: if(map-has-key($colors, $color, scale), 
@@ -111,8 +111,15 @@
       // returns each newly built color requested
       @return color.adjust($baseColor, $saturation: $newSaturation, $lightness: $newLuminance);
     }
-  } @else if ($linear == true) {
-    @debug $linear;
-    @return $baseColor;
+  } @else if ($linear == false) {
+    @if ($scale == 0) {
+      @return $baseColor;
+    } @else if ($scale >= 1) {
+      $lightenAmount: $scale * 5;
+      @return lighten($baseColor, $lightenAmount);
+    } @else if ($scale < 0) {
+      $darkenAmount: abs($scale) * 5;
+      @return darken($baseColor, $darkenAmount);
+    }
   }
 }

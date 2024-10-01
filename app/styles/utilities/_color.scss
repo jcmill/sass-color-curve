@@ -9,7 +9,6 @@
 }
 
 $mappedColor: e; 
-$testColor: #d62121;
 
 .color100 {
   background: color($mappedColor, 7);
@@ -58,35 +57,47 @@ $testColor: #d62121;
 }
 
 .color1 {
-  background: lighten($testColor, 25);
+  background: color($mappedColor, 7, false);
 }
 .color2 {
-  background: lighten($testColor, 20);
+  background: color($mappedColor, 6, false);
 }
 .color3 {
-  background: lighten($testColor, 15);
+  background: color($mappedColor, 5, false);
 }
 .color4 {
-  background: lighten($testColor, 10);
+  background: color($mappedColor, 4, false);
 }
 .color5 {
-  background: lighten($testColor, 5);
+  background: color($mappedColor, 3, false);
 }
 .color6 {
-  background: $testColor;
+  background: color($mappedColor, 2, false);
 }
 .color7 {
-  background: darken($testColor, 5);
+  background: color($mappedColor, 1, false);
 }
 .color8 {
-  background: darken($testColor, 10);
+  background: color($mappedColor);
 }
 .color9 {
-  background: darken($testColor, 15);
+  background: color($mappedColor, -1, false);
 }
 .color10 {
-  background: darken($testColor, 20);
+  background: color($mappedColor, -2, false);
 }
 .color11 {
-  background: darken($testColor, 25);
+  background: color($mappedColor, -3, false);
+}
+.color12 {
+  background: color($mappedColor, -4, false);
+}
+.color13 {
+  background: color($mappedColor, -5, false);
+}
+.color14 {
+  background: color($mappedColor, -6, false);
+}
+.color15 {
+  background: color($mappedColor, -7, false);
 }
