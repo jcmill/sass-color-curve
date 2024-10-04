@@ -17,10 +17,16 @@
   $baseColor: if(map-has-key($colors, $color, value), 
                   map-get($colors, $color, value), 
                   $color);
-
-  @if ($baseColor == #000000 or $baseColor == #ffffff) {
+   // grab the base color saturattion and luminance as starting point for building other colors
+   $baseSaturation: saturation($baseColor);
+   $baseLuminance: lightness($baseColor);
+ 
+   $difference: 1%; // initiate variable
+   
+   // if the color is grey/saturation is at 0%, only use the linear approach
+   @if ($baseSaturation == 0%) {
     $linear: false;
-  }
+  } 
                   
   @if ($linear == true) {
                     
@@ -29,12 +35,6 @@
                     map-get($colors, $color, scale), 
                     $colorScale);
   
-    // grab the base color saturattion and luminance as starting point for building other colors
-    $baseSaturation: saturation($baseColor);
-    $baseLuminance: lightness($baseColor);
-  
-    $difference: 1%; // initiate variable
-
     // if any of the color maps have keys with numbers, that indicates a custom color scheme. this pulls the key value pair and returns the color for the scale value.
     $customColors: map-get($colors, $color);
 
