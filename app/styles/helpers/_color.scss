@@ -1,6 +1,15 @@
 @use 'sass:color';
 @use 'sass:math';
-@import 'functions';
+
+@function stripUnit($value) {
+  // if value has a unit, strip it
+  @if math.is-unitless($value) == false {
+    @return math.div($value, ($value * 0 + 1)); // math that changes a value in the divisor to a unitless 1 and divides the dividend vaule.
+  } @else if (math.is-unitless($value) == true) {
+    // else return value
+    @return $value;
+  }
+};
 
 @function color($color, $scale: 0, $linear: true, $colorScale: 3) {
 
@@ -114,7 +123,7 @@
   } @else if ($linear == false) {
     @if ($scale == 0) {
       @return $baseColor;
-    } @else if ($scale >= 1) {
+    } @else if ($scale > 0) {
       $lightenAmount: $scale * 5;
       @return lighten($baseColor, $lightenAmount);
     } @else if ($scale < 0) {
