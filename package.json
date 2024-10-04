@@ -1,10 +1,14 @@
 {
-  "name": "sasscc",
+  "name": "sass-color-curve",
   "version": "1.0.0",
   "description": "A color tool for generating more saturated color options on the fly",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jcmill/sass-color-curve"
   },
   "author": "JakeM",
   "license": "ISC",
