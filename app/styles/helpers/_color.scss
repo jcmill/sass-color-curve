@@ -17,6 +17,10 @@
   $baseColor: if(map-has-key($colors, $color, value), 
                   map-get($colors, $color, value), 
                   $color);
+
+  @if ($baseColor == #000000 or $baseColor == #ffffff) {
+    $linear: false;
+  }
                   
   @if ($linear == true) {
                     
@@ -29,7 +33,7 @@
     $baseSaturation: saturation($baseColor);
     $baseLuminance: lightness($baseColor);
   
-    $difference: 1; // initiate variable
+    $difference: 1%; // initiate variable
 
     // if any of the color maps have keys with numbers, that indicates a custom color scheme. this pulls the key value pair and returns the color for the scale value.
     $customColors: map-get($colors, $color);
